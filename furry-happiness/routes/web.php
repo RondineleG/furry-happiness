@@ -2,6 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::view('/view', 'welcome');
+
+Route::redirect('/redirect1','/redirect2');
+
+// Route::get('/redirect1', function(){
+//     return redirect('/redirect2');
+// });
+
+Route::get('/redirect2', function(){
+    return "Ola 2";
+});
+
+
+
+
 Route::get('/produtos/{idProduct?}', function($idProduct = 'Nada encontrado!!'){
     return"Produtos : {$idProduct}";
 });
